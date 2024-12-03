@@ -1,3 +1,8 @@
-# gloede-fix
+hei dette er en test med merging
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/hanskoder963/gloede-fix)
+
+Ekstra linjer
+
+En linje til
+
+tester mergin
