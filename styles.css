@@ -402,6 +402,14 @@ footer {
       bottom: 0;
     }
   
+    .footerlittleman {
+      grid-row: 2;
+      grid-column: 1;
+      width: 100%;
+      max-height: 100px; 
+      object-fit: contain;
+    }
+
     .footer-contact,
     .footer-email,
     .footer-copyright {
@@ -411,4 +419,3 @@ footer {
     }
   }
 /* Here ends the footer saga */
-
