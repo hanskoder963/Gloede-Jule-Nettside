@@ -31,46 +31,63 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";  // Highlight the current dot
 }
 
-// Menu Button Toggle (Desktop and Mobile)
-const menuButton = document.getElementById('menuButton');
-const menuDropdown = document.getElementById('menuDropdown');
-const toggleThemeButton = document.getElementById('toggleTheme');
+document.addEventListener('DOMContentLoaded', function() {
+    const themeSlider = document.getElementById("themeSlider");
+    const sliderCircle = document.getElementById("sliderCircle");
+    const sliderBackground = document.getElementById("sliderBackground");
+    const sliderContainer = document.querySelector('.slider-container');
+    const body = document.body;
 
-// Show/Hide Dropdown Menu
-if (menuButton && menuDropdown) {
-    menuButton.addEventListener('click', (event) => {
-        event.stopPropagation();  // Prevent click from closing the dropdown immediately
-        // Toggle visibility of the dropdown
-        if (menuDropdown.style.display === 'block') {
-            menuDropdown.style.display = 'none';
-        } else {
-            menuDropdown.style.display = 'block';
-        }
+    themeSlider.addEventListener("click", function() {
+      if (body.classList.contains("light")) {
+        // Switch to dark mode
+        body.classList.remove("light");
+        body.classList.add("dark");
+
+        // Change colors
+        sliderCircle.setAttribute("fill", "black");
+        sliderBackground.setAttribute("fill", "grey");
+
+        // Animate circle position to the right
+        sliderCircle.style.transform = "translateX(50px)";
+      } else {
+        // Switch to light mode
+        body.classList.remove("dark");
+        body.classList.add("light");
+
+        // Change colors
+        sliderCircle.setAttribute("fill", "grey");
+        sliderBackground.setAttribute("fill", "black");
+
+        // Animate circle position to the left
+        sliderCircle.style.transform = "translateX(0)";
+      }
+    });
+});
+    // Dropdown menu toggle event
+    menuButton.addEventListener("click", function() {
+      // Toggle the active class on the menu dropdown
+      menuDropdown.classList.toggle("active");
+    });
+  
+    // Close the dropdown menu if clicked outside of the menu or button
+    document.addEventListener("click", function(event) {
+      if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
+        menuDropdown.classList.remove("active");
+      }
     });
 
-    // Close Dropdown Menu When Clicking Outside (For both Desktop and Mobile)
-    document.addEventListener('click', (event) => {
-        if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
-            menuDropdown.style.display = 'none';  // Hide dropdown when clicking outside
-        }
-    });
+/*julekule infoboks script*/
+function visInfo(tekst) {
+    const infoboks = document.getElementById('infoboks');
+    const infotekst = document.getElementById('infotekst');
+
+    infotekst.textContent = tekst;
+    infoboks.style.display = 'block';
 }
 
-// Theme Toggle Button Logic
-if (toggleThemeButton) {
-    toggleThemeButton.addEventListener('click', () => {
-        // Toggle between light and dark theme
-        const body = document.body;
-        
-        // Check the current theme and switch it
-        if (body.classList.contains('light')) {
-            body.classList.remove('light');
-            body.classList.add('dark');
-            toggleThemeButton.textContent = 'Light Mode';  // Change text to "Light Mode"
-        } else {
-            body.classList.remove('dark');
-            body.classList.add('light');
-            toggleThemeButton.textContent = 'Dark Mode';  // Change text to "Dark Mode"
-        }
-    });
+function lukkInfo() {
+    const infoboks = document.getElementById('infoboks');
+    infoboks.style.display = 'none';
 }
+/*julekule infoboks script*/

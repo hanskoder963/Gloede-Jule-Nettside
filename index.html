@@ -8,12 +8,25 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
+
+  
   <body class="light">
     <header>
   <div class="site-header">
     <button id="menuButton" class="menu-button"></button>
     <div id="menuDropdown" class="menu-dropdown">
-      <button id="toggleTheme" class="theme-toggle">Dark Mode</button>
+      <div class="theme-toggle-container">
+        <label for="themeToggle" class="theme-label">Dark/light Mode</label>
+        <div class="slider-container" id="themeSlider">
+          <!-- SVG Circle (slider) -->
+          <svg id="themeSVG" width="100" height="50" xmlns="http://www.w3.org/2000/svg">
+            <!-- White background rectangle -->
+            <rect id="sliderBackground" width="89" height="50" rx="25" ry="25" fill="black" />
+            <!-- Circle that moves -->
+            <circle id="sliderCircle" cx="25" cy="25" r="20" fill="grey" />
+          </svg>
+        </div>
+      </div>
     </div>
     <img src="Images/gloede-logo.png" alt="logo" class="logo">
     <img src="Images/gloede-logo-text.png" alt="gløde Programmering" class="logo-text">
@@ -23,7 +36,29 @@
   </div>
 </header>
 <main>
-  <center><h1>Gløde Programmering</h1></center>
+  
+    
+  <section class="juletre-container">
+    <img src="Images/Juletre.svg" alt="Juletre" class="juletre">
+    <div class="kulegrid">
+        <div class="kule kulered"></div>
+        <div class="kule kulegreen"></div>
+        <div class="kule kuleblue"></div>
+    </div>
+</section>
+  <div class="infoboks" id="infoboks">
+      <span id="lukke">X</span>
+      <p id="infotekst"></p>
+  </div>
+
+    
+    <div class="juletre-footer">
+        <img src="Images/GlodeData.jpg" alt="Gløde Data">
+    </div>
+
+
+
+  
   <div class="slideshow-container">
     <div class="mySlides fade">
       <div class="numbertext">1 / 3</div>
@@ -50,18 +85,16 @@
       <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
   </main>
-
-  <footer><img class="footerglodeimg" src='Images/Glødetittel.png'/></img>
+  <footer>
     <div class="footerrectanglecontainer">
-          <img src="Images/gloede-logo.png">
-          <p class="footer-contact">Kontaktskjema
-          tlf: 8008135</p> 
-          <p class="footer-email">H S email:
-          susdal@glode.no</p>
-          <p class="footer-copyright">©2024 Gløde AS</p>
+      <img class="footerlittleman" src="Images/gloede-logo.png">
+      <img class="footerchristmaslights" src="Images/Christmas-lights.png">
+        <p class="footer-contact">Kontaktskjema tlf: 8008135</p> 
+        <p class="footer-email">H S email:susdal@glode.no</p>
+        <p class="footer-copyright">©2024 Gløde AS</p>
+      <img class="footerglodeimg" src='Images/Glødetittel.png'/>
     </div>
-    </footer>
-
+  </footer>
 </body>
 </html>
 
